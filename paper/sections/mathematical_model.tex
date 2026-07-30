@@ -1,2 +1,122 @@
-\section{Mathematical Model}
-TODO.
+\section{Stratified Optical Model}
+\label{sec:model}
+
+\subsection{Geometry and assumptions}
+
+Consider a two-dimensional vertical section of an otherwise horizontally
+homogeneous medium.  Let $x$ denote horizontal distance and let $h\geq 0$
+denote height above an opaque planar boundary located at $h=0$.  The
+refractive index is assumed to be isotropic and vertically stratified,
+\begin{equation}
+    n=n(h),
+    \qquad n(h)>0,
+\end{equation}
+with
+\begin{equation}
+    n_0\equiv n(0).
+\end{equation}
+Because the medium is invariant under horizontal translations, every ray may
+be studied in a single vertical plane.  A ray is represented by a curve
+$h=h(x)$ wherever it is single-valued in $x$.
+
+The boundary at $h=0$ is taken to be perfectly opaque.  A source and an
+observer are therefore mutually visible only if at least one geometrical-optics
+ray connecting them remains in the open half-space $h>0$, except possibly at a
+single tangency point in the limiting case.
+
+\subsection{Fermat principle and the first integral}
+
+The optical path length of a ray between two fixed endpoints is
+\begin{equation}
+    \mathcal{S}[h]
+    =
+    \int n(h)\,ds
+    =
+    \int n(h)\sqrt{1+h'^2}\,dx,
+    \label{eq:fermat-functional}
+\end{equation}
+where $h'=dh/dx$.  Rays are stationary curves of
+Eq.~\eqref{eq:fermat-functional}.  The corresponding Lagrangian,
+\begin{equation}
+    \mathcal{L}(h,h')=n(h)\sqrt{1+h'^2},
+\end{equation}
+has no explicit $x$ dependence.  The Beltrami identity consequently gives
+\begin{equation}
+    \mathcal{L}
+    -h'\frac{\partial\mathcal{L}}{\partial h'}
+    =
+    \frac{n(h)}{\sqrt{1+h'^2}}
+    =a,
+    \label{eq:first-integral}
+\end{equation}
+where $a$ is constant along a ray.  If $\theta$ is the angle between the ray
+and the horizontal, then $\cos\theta=1/\sqrt{1+h'^2}$ and
+Eq.~\eqref{eq:first-integral} becomes
+\begin{equation}
+    n(h)\cos\theta=a.
+\end{equation}
+This is the continuous form of Snell's law appropriate to a horizontally
+stratified medium.
+
+Solving Eq.~\eqref{eq:first-integral} for the ray slope yields
+\begin{equation}
+    h'^2
+    =
+    \frac{n^2(h)}{a^2}-1.
+    \label{eq:ray-slope}
+\end{equation}
+On any monotonic branch of a ray,
+\begin{equation}
+    \left|\frac{dx}{dh}\right|
+    =
+    \frac{a}{\sqrt{n^2(h)-a^2}}.
+    \label{eq:horizontal-increment-general}
+\end{equation}
+These relations will be used below both for direct ray construction and for
+reconstructing a refractive-index profile from a prescribed visibility law.
+
+\subsection{Grazing rays and horizon distance}
+
+For fixed endpoint heights, the limiting visible ray is the ray that just
+grazes the opaque boundary.  At its point of contact with $h=0$ the ray is
+horizontal, so that $h'=0$.  Equation~\eqref{eq:first-integral} then fixes its
+constant to
+\begin{equation}
+    a=n_0.
+    \label{eq:grazing-constant}
+\end{equation}
+A smooth grazing ray of this type requires $n(h)\geq n_0$ over the heights it
+traverses.  In particular, the profiles relevant to downward-bending rays
+above the boundary increase with height near $h=0$.
+
+Define $d(h)$ as the maximum horizontal distance from a boundary tangency
+point to an endpoint at height $h$.  Substituting
+Eq.~\eqref{eq:grazing-constant} into
+Eq.~\eqref{eq:horizontal-increment-general} gives
+\begin{equation}
+    d(h)
+    =
+    \int_0^h
+    \frac{n_0\,d\eta}
+         {\sqrt{n^2(\eta)-n_0^2}}.
+    \label{eq:horizon-distance-general}
+\end{equation}
+The square-root singularity at the lower limit is integrable whenever the
+profile rises regularly from $n_0$.
+
+Let an observer and a target have heights $h_{\mathrm{o}}$ and
+$h_{\mathrm{t}}$, respectively.  Horizontal translational symmetry allows
+the grazing point to be chosen as the origin.  The limiting ray then consists
+of two reciprocal branches meeting tangentially at the boundary, and the
+maximum horizontal separation is
+\begin{equation}
+    L_{\max}(h_{\mathrm{o}},h_{\mathrm{t}})
+    =
+    d(h_{\mathrm{o}})+d(h_{\mathrm{t}}).
+    \label{eq:maximum-separation-general}
+\end{equation}
+For separations below this value an unobstructed ray exists; at equality the
+ray grazes the boundary; above it every connecting ray intersects the opaque
+surface.  Equation~\eqref{eq:horizon-distance-general} therefore provides the
+basic link between a stratified refractive-index profile and the resulting
+horizon-occlusion law.
