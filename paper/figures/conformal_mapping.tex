@@ -5,9 +5,10 @@
     line cap=round,
     line join=round,
     ray/.style={line width=0.95pt},
+    tangent/.style={line width=1.35pt},
     boundary/.style={line width=1.35pt},
     construction/.style={line width=0.45pt,dashed},
-    maparrow/.style={line width=0.9pt,-{Latex[length=3mm]}},
+    maparrow/.style={line width=1.05pt,-{Latex[length=3.4mm]}},
     point/.style={circle,fill=black,inner sep=1.7pt},
     every node/.style={font=\small}
 ]
@@ -15,17 +16,17 @@
 % (a) Physical plane
 % --------------------------------------------------------------------------
 \begin{scope}[shift={(0,0)}]
-  \node[font=\normalsize] at (2.45,3.85) {(a) Physical plane};
+  \node[font=\normalsize] at (2.35,3.80) {(a) Physical plane};
 
-  \draw[boundary] (0.10,0) -- (4.80,0);
+  \draw[boundary] (0.10,0) -- (4.65,0);
   \node[anchor=north west] at (0.18,-0.12) {$h=0$};
 
   % Exact grazing branch, shown in normalized form and affinely scaled.
   \draw[ray,domain=-1.02:0,samples=120,smooth,variable=\u]
-    plot ({4.12+3.35*\u},{-2.18*ln(cos(57.2958*\u))});
+    plot ({4.03+3.28*\u},{-2.14*ln(cos(57.2958*\u))});
 
-  \coordinate (G) at (4.12,0);
-  \coordinate (O) at ({4.12-3.35*1.02},{-2.18*ln(cos(57.2958*1.02))});
+  \coordinate (G) at (4.03,0);
+  \coordinate (O) at ({4.03-3.28*1.02},{-2.14*ln(cos(57.2958*1.02))});
 
   \node[point] at (G) {};
   \node[point] at (O) {};
@@ -46,25 +47,25 @@
 % --------------------------------------------------------------------------
 % Conformal map
 % --------------------------------------------------------------------------
-\begin{scope}[shift={(5.05,0)}]
-  \node[align=center] at (0.95,2.75)
+\begin{scope}[shift={(4.62,0)}]
+  \node[align=center] at (1.20,2.98)
     {$r=R e^{h/R}$\\[-1pt]$\phi=x/R$};
-  \draw[maparrow] (0.20,1.75) -- (1.70,1.75);
+  \draw[maparrow] (0.10,1.76) -- (2.30,1.76);
 \end{scope}
 
 % --------------------------------------------------------------------------
 % (b) Conformal image
 % --------------------------------------------------------------------------
-\begin{scope}[shift={(7.05,0)}]
-  \node[font=\normalsize] at (2.35,3.85) {(b) Conformal image};
+\begin{scope}[shift={(7.12,0)}]
+  \node[font=\normalsize] at (2.18,3.80) {(b) Conformal image};
 
-  \coordinate (C) at (2.25,1.46);
-  \def\R{1.18}
+  \coordinate (C) at (2.15,1.47);
+  \def\R{1.06}
   \coordinate (Gp) at ($(C)+(0,\R)$);
-  \coordinate (Op) at ($(Gp)+(-1.92,0)$);
+  \coordinate (Op) at ($(Gp)+(-2.12,0)$);
 
   \draw[boundary] (C) circle[radius=\R];
-  \draw[ray] ($(Op)+(-0.12,0)$) -- ($(Gp)+(0.98,0)$);
+  \draw[tangent] ($(Op)+(-0.08,0)$) -- ($(Gp)+(1.02,0)$);
 
   \node[point] at (Gp) {};
   \node[point] at (Op) {};
@@ -75,7 +76,7 @@
   \node[below right=1pt] at (C) {$C$};
 
   \draw[line width=0.55pt] (C) -- (Gp) node[midway,right] {$R$};
-  \draw[line width=0.55pt] (C) -- (Op) node[pos=0.55,below left] {$r$};
+  \draw[line width=0.55pt] (C) -- (Op) node[pos=0.53,below left] {$r$};
 
   % Right-angle marker at tangency.
   \draw[line width=0.45pt]
@@ -83,10 +84,11 @@
 
   % Angular displacement.
   \draw[-{Latex[length=2mm]},line width=0.5pt]
-    ($(C)+(90:0.56)$) arc[start angle=90,end angle=132.5,radius=0.56];
-  \node at ($(C)+(111:0.84)$) {$\Delta\phi$};
+    ($(C)+(90:0.52)$) arc[start angle=90,end angle=136.8,radius=0.52];
+  \node at ($(C)+(113:0.78)$) {$\Delta\phi$};
 
-  \node[below=5pt] at ($(C)+(0,-\R)$) {$r=R$};
+  \node[below=5pt,align=center] at ($(C)+(0,-\R)$)
+    {circular boundary\\[-1pt]$r=R$};
 \end{scope}
 \end{tikzpicture}
 \caption{Conformal representation of the exponential refractive model. The transformation $r=R e^{h/R}$, $\phi=x/R$ maps the opaque planar boundary $h=0$ to the circle $r=R$ and the curved grazing ray to a straight tangent line.}
