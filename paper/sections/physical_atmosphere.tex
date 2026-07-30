@@ -1,11 +1,11 @@
 \section{Comparison with the Physical Atmosphere}
 \label{sec:physical-atmosphere}
 
-The inverse construction of Sec.~\ref{sec:inverse-reconstruction} establishes
-that a stratified refractive medium can be designed mathematically to reproduce
-a prescribed horizon law above a flat opaque boundary.  The remaining question
-is whether the required profile resembles the refractive-index structure of an
-ordinary atmosphere.  The decisive distinction is the sign of the vertical
+The inverse construction of Sec.~\ref{sec:inverse-reconstruction} shows that a
+stratified refractive medium can be designed mathematically to reproduce a
+prescribed horizon law above a flat opaque boundary.  The remaining issue is
+whether the required profile resembles the refractive-index structure of an
+ordinary atmosphere.  The decisive difference is the sign of the vertical
 refractive-index gradient.
 
 \subsection{Gradient required by the optical construction}
@@ -15,7 +15,7 @@ The Earth-scale exponential model is
     n_{\mathrm{e}}(h)=n_0 e^{h/R},
     \label{eq:required-exponential-profile}
 \end{equation}
-so that
+which gives
 \begin{equation}
     \frac{dn_{\mathrm{e}}}{dh}
     =
@@ -25,7 +25,7 @@ so that
 \end{equation}
 The exact profile reconstructed from the spherical horizon law,
 Eq.~\eqref{eq:exact-spherical-reconstruction-profile}, has the same qualitative
-behaviour.  Writing
+behaviour.  Indeed, writing
 \begin{equation}
     \frac{n_{\mathrm{s}}^2(h)}{n_0^2}
     =
@@ -33,27 +33,26 @@ behaviour.  Writing
     \frac{(R+h)^2h(2R+h)}{R^4},
 \end{equation}
 the polynomial multiplying $R^{-4}$ is strictly increasing for $h>0$.
-Consequently,
+Therefore,
 \begin{equation}
     \frac{dn_{\mathrm{s}}}{dh}>0
     \qquad (h>0).
     \label{eq:reconstructed-positive-gradient}
 \end{equation}
-Thus both the asymptotically matched exponential profile and the exact inverse
-profile require the refractive index to increase with altitude.
+Both the asymptotically matched exponential profile and the exact inverse
+profile thus require the refractive index to increase with altitude.
 
-This sign is also consistent with the ray geometry derived earlier.  In a
-stratified isotropic medium, rays bend toward larger refractive index.  A
-profile with $dn/dh>0$ therefore bends rays upward, allowing a ray connecting
-two elevated endpoints to have a lower turning point and to graze the opaque
-boundary between them.  That lower turning point is the optical analogue of a
-geometric tangency point on a convex surface.
+This sign also agrees with the ray geometry derived above.  In a stratified
+isotropic medium, rays bend toward regions of larger refractive index.  A
+profile with $dn/dh>0$ therefore bends rays upward, allowing a ray that joins
+two elevated endpoints to pass through a lower turning point and graze the
+opaque boundary between them.  This turning point is the optical analogue of a
+geometrical tangency point on a convex surface.
 
 \subsection{Ordinary atmospheric stratification}
 
-Away from strong local inversions, the refractive index of air decreases with
-height because density and pressure decrease upward.  A simple idealised
-profile is
+Except under strong local inversions, the refractive index of air decreases
+with altitude as density and pressure decrease.  A simple idealised profile is
 \begin{equation}
     n_{\mathrm{a}}(h)
     \simeq
@@ -68,16 +67,16 @@ where $H$ is an atmospheric scale height.  Its derivative is
     <0.
     \label{eq:ordinary-negative-gradient}
 \end{equation}
-The ordinary atmosphere therefore has the opposite gradient sign from
+The ordinary atmosphere therefore has the opposite gradient sign to that in
 Eqs.~\eqref{eq:required-positive-gradient} and
-\eqref{eq:reconstructed-positive-gradient}.  Its rays bend toward the denser,
-higher-index air below rather than upward toward increasing index.
+\eqref{eq:reconstructed-positive-gradient}.  Rays bend toward the denser,
+higher-index air below rather than upward toward regions of increasing index.
 
-The mismatch is not merely quantitative.  Altering the scale height or the
-small surface refractivity $n_0-1$ changes the magnitude of the gradient but
-not its sign.  A monotonically decreasing profile cannot be continuously tuned
-into the required increasing profile without passing through a qualitatively
-different stratification.
+This mismatch is qualitative rather than merely quantitative.  Changing the
+scale height or the small surface refractivity $n_0-1$ modifies the magnitude
+of the gradient but not its sign.  A monotonically decreasing profile cannot
+be continuously adjusted into the required increasing profile without passing
+through a qualitatively different stratification.
 
 \subsection{Scale of the required variation}
 
@@ -88,7 +87,7 @@ For the exponential construction, the fractional gradient is
     \frac{1}{R}.
     \label{eq:required-fractional-gradient}
 \end{equation}
-Near the boundary this gives
+Near the boundary,
 \begin{equation}
     n(h)-n_0
     \simeq
@@ -96,31 +95,31 @@ Near the boundary this gives
     \label{eq:required-near-surface-index-change}
 \end{equation}
 The exact inverse profile has the same linear term, as shown in
-Eq.~\eqref{eq:spherical-profile-small-height}.  Hence the leading requirement
-is not an arbitrarily chosen local anomaly: it is fixed by the radius $R$ of
-the spherical horizon law being reproduced.
+Eq.~\eqref{eq:spherical-profile-small-height}.  The leading requirement is
+therefore not an arbitrarily chosen local anomaly; it is fixed by the radius
+$R$ of the spherical horizon law being reproduced.
 
 The absolute change over terrestrial heights is small because $h/R\ll1$.
-Smallness, however, does not remove the sign conflict.  A weak positive
-gradient and a weak negative gradient bend rays in opposite directions and
-therefore generate different turning-point structures.
+Its small magnitude, however, does not remove the sign conflict.  Weak positive
+and negative gradients bend rays in opposite directions and therefore produce
+different turning-point structures.
 
 \subsection{Exceptional atmospheric conditions}
 
 Real atmospheres need not be perfectly monotonic.  Temperature inversions and
 sharp boundary layers can produce anomalous refraction, ducting, mirages, and
-multiple ray paths.  Such effects can substantially shift an apparent horizon
-or distort individual objects.  They do not, however, make the ordinary
+multiple ray paths.  Such effects may substantially shift an apparent horizon
+or distort individual objects.  They do not, however, render the ordinary
 atmosphere globally equivalent to the smooth profile reconstructed above.
 Exact reproduction of the spherical visibility law for arbitrary endpoint
 heights requires the prescribed positive profile throughout the relevant
-height interval, not merely a local layer that occasionally bends selected
+height interval, rather than a local layer that occasionally bends selected
 rays in the required direction.
 
-Accordingly, two claims must be kept separate.  First, inverse geometrical
-optics shows that a mathematical refractive profile above a flat boundary can
-reproduce the same limiting horizon law as a sphere.  Second, the profile
-required to do so is not the refractive-index profile of an ordinary
-atmosphere: its vertical gradient has the opposite sign.  The construction is
-therefore a useful optical equivalence, but not a model of standard atmospheric
+Two distinct statements should therefore be separated.  First, inverse
+geometrical optics shows that a mathematical refractive profile above a flat
+boundary can reproduce the same limiting horizon law as a sphere.  Second, the
+profile required for this equivalence is not that of an ordinary atmosphere,
+because its vertical gradient has the opposite sign.  The construction is
+therefore an exact optical equivalence, but not a model of standard atmospheric
 refraction.
