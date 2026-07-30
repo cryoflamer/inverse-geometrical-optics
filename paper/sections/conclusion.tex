@@ -1,2 +1,82 @@
 \section{Conclusion}
-TODO.
+\label{sec:conclusion}
+
+This work has formulated horizon occlusion as an inverse problem in
+geometrical optics.  Starting from Fermat's principle for a horizontally
+stratified refractive index $n(h)$, we derived the ray equation in both the
+paraxial and exact regimes and asked which vertical profile would reproduce
+the limiting visibility law associated with a curved surface.
+
+In the paraxial approximation, constant upward ray curvature requires an
+exponential refractive index,
+\begin{equation}
+    n(h)=n_0 e^{h/R},
+\end{equation}
+when the curvature scale is chosen to match a sphere of radius $R$.  The
+resulting grazing rays recover the familiar leading horizon law
+\begin{equation}
+    d(h)\simeq\sqrt{2Rh},
+\end{equation}
+and the maximum observer--target separation is the sum of the two one-sided
+horizon distances.
+
+The exponential model is also exactly solvable.  Its ray family is
+\begin{equation}
+    h(x)
+    =
+    h_m
+    -R\ln\!\left[
+        \cos\!\left(\frac{x-x_m}{R}\right)
+    \right],
+\end{equation}
+and its exact one-sided horizon distance is
+\begin{equation}
+    d_{\mathrm e}(h)
+    =
+    R\arccos\!\left(e^{-h/R}\right).
+\end{equation}
+A conformal coordinate transformation maps the corresponding optical metric
+to the homogeneous Euclidean exterior of a circle.  This establishes an exact
+optical equivalence between the flat exponential medium and circular
+occlusion, with the important qualification that physical height is mapped
+nonlinearly according to $r=Re^{h/R}$.
+
+Comparison with the exact spherical arc-distance law,
+\begin{equation}
+    d_{\mathrm s}(h)
+    =
+    R\arccos\!\left(\frac{R}{R+h}\right),
+\end{equation}
+shows that the two models agree extremely well at terrestrial heights but are
+not identical at equal numerical height beyond leading order.  Exact equality
+for a prescribed horizon law can instead be enforced through the general
+inverse reconstruction
+\begin{equation}
+    n(h)
+    =
+    n_0\sqrt{1+\frac{1}{[d'(h)]^2}},
+\end{equation}
+within the assumptions of a smooth monotonic stratified medium and a single
+grazing branch.
+
+The decisive physical result is the sign of the required gradient.  Both the
+exponential construction and the profile reconstructed from the exact
+spherical law require
+\begin{equation}
+    \frac{dn}{dh}>0,
+\end{equation}
+so that rays bend upward and possess lower turning points.  Ordinary
+atmospheric stratification has the opposite sign, $dn/dh<0$, apart from local
+and transient anomalous layers.  Standard atmospheric refraction therefore
+cannot serve as a global mechanism that reproduces the complete spherical
+horizon law above a flat boundary.
+
+The analysis nevertheless demonstrates a broader point.  Bottom-first
+disappearance, recovery with observer height, and a finite horizon are not
+logically unique signatures of surface curvature when arbitrary refractive
+media are permitted.  They can be reproduced by a specially engineered
+optical geometry.  What distinguishes competing explanations is not the mere
+existence of bent rays, but the quantitative refractive profile, its physical
+stability, and the additional imaging effects it predicts.  In that sense,
+the inverse problem converts a qualitative resemblance into a testable
+condition on the medium.
