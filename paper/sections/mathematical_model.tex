@@ -3,7 +3,7 @@
 
 \subsection{Geometry and assumptions}
 
-Consider a two-dimensional vertical section through a horizontally
+We consider a two-dimensional vertical section through a horizontally
 homogeneous medium. Let $x$ denote horizontal distance and let $h\geq 0$
 denote height above an opaque planar boundary located at $h=0$. The
 refractive index is assumed to be isotropic and vertically stratified,
@@ -15,11 +15,12 @@ with
 \begin{equation}
     n_0\equiv n(0).
 \end{equation}
+Throughout the paper, $h$ is measured upward from the opaque boundary.
 Horizontal translational symmetry allows each ray to be analysed in a single
 vertical plane. A ray is represented by a curve
 $h=h(x)$ wherever it is single-valued in $x$.
 
-The boundary at $h=0$ is taken to be perfectly opaque. A source and an
+The boundary at $h=0$ is assumed to be perfectly opaque. A source and an
 observer are mutually visible only if at least one geometrical-optics ray
 connecting them remains in the open half-space $h>0$, except possibly at a
 single tangency point in the limiting case.
@@ -36,12 +37,14 @@ geometrical-optics approximation \cite{born1999principles},
     \int n(h)\sqrt{1+h'^2}\,dx,
     \label{eq:fermat-functional}
 \end{equation}
-where $h'=dh/dx$. Geometrical-optics rays are stationary curves of
-Eq.~\eqref{eq:fermat-functional}. The corresponding Lagrangian,
+where $h'=dh/dx$. Geometrical-optics rays are stationary paths of
+the functional in Eq.~\eqref{eq:fermat-functional}. The corresponding
+Lagrangian,
 \begin{equation}
     \mathcal{L}(h,h')=n(h)\sqrt{1+h'^2},
 \end{equation}
-has no explicit $x$ dependence. The Beltrami identity consequently gives
+contains no explicit dependence on $x$. Because of this translational
+symmetry, the Beltrami identity gives
 \begin{equation}
     \mathcal{L}
     -h'\frac{\partial\mathcal{L}}{\partial h'}
@@ -87,9 +90,9 @@ constant to
     a=n_0.
     \label{eq:grazing-constant}
 \end{equation}
-Such a smooth grazing ray requires $n(h)\geq n_0$ throughout the heights it
-traverses. In particular, the profiles relevant to upward-bending rays above the boundary increase with
-height near $h=0$.
+Such a grazing ray requires $n(h)\geq n_0$ throughout the heights it
+traverses. Hence the upward-bending profiles considered here satisfy
+$n(h)\geq n_0$ near the boundary.
 
 Define $d(h)$ as the maximum horizontal distance from a boundary tangency
 point to an endpoint at height $h$. Substituting
@@ -107,8 +110,8 @@ The square-root singularity at the lower limit is integrable whenever the
 profile rises regularly from $n_0$.
 
 Let an observer and a target have heights $h_{\mathrm{o}}$ and
-$h_{\mathrm{t}}$, respectively. Horizontal translational symmetry allows
-the grazing point to be chosen as the origin. The limiting ray then consists
+$h_{\mathrm{t}}$, respectively. By horizontal translational symmetry, the
+grazing point may be chosen as the origin. The limiting ray then consists
 of two reciprocal branches meeting tangentially at the boundary, and the
 maximum horizontal separation is
 \begin{equation}
@@ -131,7 +134,9 @@ horizon distance and the two-sided limiting geometry.
     $L_{\max}=d(h_{\mathrm{o}})+d(h_{\mathrm{t}})$.}
     \label{fig:grazing-geometry}
 \end{figure}
-For separations below this value, an unobstructed ray exists. At equality,
-the limiting ray grazes the boundary; above it, every connecting ray intersects the opaque surface.
-Equation~\eqref{eq:horizon-distance-general} therefore provides the basic link between a stratified refractive-index profile and the resulting
+For separations below this limit, an unobstructed ray exists. At equality,
+the limiting ray grazes the boundary. Beyond it, every connecting ray
+intersects the opaque surface.
+Equation~\eqref{eq:horizon-distance-general} therefore provides the basic
+link between a stratified refractive-index profile and the resulting
 horizon-occlusion law.
