@@ -1,2 +1,177 @@
-\section{Comparison with a Spherical Earth}
-TODO.
+\section{Comparison with a Spherical Surface}
+\label{sec:spherical-comparison}
+
+The exponential refractive profile and a spherical surface produce the same
+leading square-root dependence of horizon distance on endpoint height, but
+they are not identical when the same numerical height is used in both models.
+This section compares the two exact laws and quantifies their difference.
+
+\subsection{Exact spherical horizon law}
+
+Consider a sphere of radius $R$ and a point at radial height $h$ above its
+surface.  Let $\alpha$ be the central angle between the point's radial line and
+the radius through the tangency point of the limiting line of sight.  The
+right triangle formed by the sphere centre, the elevated point, and the
+tangency point gives
+\begin{equation}
+    \cos\alpha
+    =
+    \frac{R}{R+h}.
+    \label{eq:spherical-horizon-angle}
+\end{equation}
+The surface distance from the tangency point to the foot of the elevated point
+is therefore
+\begin{equation}
+    d_{\mathrm{s}}(h)
+    =
+    R\alpha
+    =
+    R\arccos\!\left(\frac{R}{R+h}\right).
+    \label{eq:exact-spherical-horizon-distance}
+\end{equation}
+For observer and target heights $h_{\mathrm{o}}$ and $h_{\mathrm{t}}$, the
+maximum surface separation before mutual occlusion is
+\begin{equation}
+    L_{\max}^{(\mathrm{s})}
+    =
+    d_{\mathrm{s}}(h_{\mathrm{o}})
+    +
+    d_{\mathrm{s}}(h_{\mathrm{t}}).
+    \label{eq:exact-spherical-maximum-separation}
+\end{equation}
+Here the comparison variable is surface arc length.  This is the quantity
+corresponding to the horizontal coordinate $x=R\phi$ in the conformal map of
+Sec.~\ref{sec:conformal-equivalence}.  The straight-line distance from the
+elevated point to the tangency point,
+\begin{equation}
+    \sqrt{h(2R+h)},
+\end{equation}
+is a different geometric quantity and is not used in the comparison below.
+
+\subsection{Exact refractive and spherical laws}
+
+For the Earth-scale exponential profile, Eq.~\eqref{eq:exact-exponential-horizon-distance}
+with $\kappa=1/R$ gives
+\begin{equation}
+    d_{\mathrm{e}}(h)
+    =
+    R\arccos\!\left(e^{-h/R}\right).
+    \label{eq:earth-scale-exponential-distance}
+\end{equation}
+The two exact horizon laws are thus
+\begin{align}
+    d_{\mathrm{e}}(h)
+    &=
+    R\arccos\!\left(e^{-h/R}\right),
+    \\
+    d_{\mathrm{s}}(h)
+    &=
+    R\arccos\!\left(\frac{1}{1+h/R}\right).
+    \label{eq:refractive-spherical-pair}
+\end{align}
+Their difference originates entirely from the relation between physical height
+and transformed radial height.  Under Eq.~\eqref{eq:conformal-coordinate-map},
+a flat-model height $h$ corresponds to the circular radius
+\begin{equation}
+    r=Re^{h/R}.
+\end{equation}
+Consequently, the exponential model is exactly equivalent to a circular model
+whose radial height is
+\begin{equation}
+    H(h)
+    =
+    R\left(e^{h/R}-1\right),
+    \label{eq:equivalent-radial-height}
+\end{equation}
+not to a circular model whose radial height is numerically equal to $h$.  In
+fact,
+\begin{equation}
+    d_{\mathrm{e}}(h)
+    =
+    d_{\mathrm{s}}\!\left(H(h)\right)
+    \label{eq:exact-height-reparameterization}
+\end{equation}
+holds exactly.  The mismatch at equal heights is therefore a coordinate
+reparameterization effect rather than a failure of the conformal equivalence.
+
+\subsection{Small-height comparison}
+
+Let
+\begin{equation}
+    z=\frac{h}{R}.
+\end{equation}
+For $z\ll 1$, the refractive distance has the expansion already obtained in
+Eq.~\eqref{eq:exact-distance-expansion},
+\begin{equation}
+    d_{\mathrm{e}}(h)
+    =
+    \sqrt{2Rh}
+    \left[
+        1-\frac{z}{6}+\frac{z^2}{120}
+        +O(z^3)
+    \right].
+    \label{eq:refractive-distance-small-height}
+\end{equation}
+The spherical arc distance expands as
+\begin{equation}
+    d_{\mathrm{s}}(h)
+    =
+    \sqrt{2Rh}
+    \left[
+        1-\frac{5z}{12}+\frac{43z^2}{160}
+        +O(z^3)
+    \right].
+    \label{eq:spherical-distance-small-height}
+\end{equation}
+Both laws therefore reduce to
+\begin{equation}
+    d(h)\simeq\sqrt{2Rh}
+\end{equation}
+at leading order.  Their first difference appears one order later:
+\begin{equation}
+    d_{\mathrm{e}}(h)-d_{\mathrm{s}}(h)
+    =
+    \sqrt{2Rh}
+    \left[
+        \frac{z}{4}
+        -\frac{25z^2}{96}
+        +O(z^3)
+    \right].
+    \label{eq:refractive-spherical-difference}
+\end{equation}
+Hence the relative discrepancy is of order $h/R$.  For ordinary terrestrial
+heights this is extremely small even though the two laws are not exactly the
+same at equal numerical height.
+
+\subsection{Numerical scale of the discrepancy}
+
+Table~\ref{tab:horizon-law-comparison} illustrates the difference for
+$R=6371\,\mathrm{km}$.  The listed distances are one-sided horizon distances
+from a tangency point to an endpoint at height $h$.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{rccc}
+        \hline
+        $h$ & $d_{\mathrm{e}}$ (km) & $d_{\mathrm{s}}$ (km)
+            & $d_{\mathrm{e}}-d_{\mathrm{s}}$ \\
+        \hline
+        $2\,\mathrm{m}$   & 5.048168 & 5.048167 & $0.40\,\mathrm{mm}$ \\
+        $10\,\mathrm{m}$  & 11.288044 & 11.288039 & $4.43\,\mathrm{mm}$ \\
+        $100\,\mathrm{m}$ & 35.695845 & 35.695705 & $0.140\,\mathrm{m}$ \\
+        $1\,\mathrm{km}$  & 112.877515 & 112.873086 & $4.43\,\mathrm{m}$ \\
+        $10\,\mathrm{km}$ & 356.866007 & 356.726164 & $139.84\,\mathrm{m}$ \\
+        \hline
+    \end{tabular}
+    \caption{Exact exponential-refractive and spherical horizon distances at
+    equal numerical height for $R=6371\,\mathrm{km}$.}
+    \label{tab:horizon-law-comparison}
+\end{table}
+
+The numerical agreement at low altitude is therefore much stronger than the
+mere equality of the leading square-root law might suggest.  Nevertheless,
+with sufficiently large heights or sufficiently precise measurements the two
+models are distinguishable.  Exact agreement at equal physical height would
+require a different refractive-index profile, which can be reconstructed from
+the desired visibility law by the inverse method developed later in the
+paper.
