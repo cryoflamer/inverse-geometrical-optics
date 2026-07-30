@@ -39,12 +39,13 @@ geometrical-optics approximation \cite{born1999principles},
 \end{equation}
 where $h'=dh/dx$. Geometrical-optics rays are stationary paths of
 the functional in Eq.~\eqref{eq:fermat-functional}. The corresponding
-Lagrangian,
+Lagrangian is
 \begin{equation}
-    \mathcal{L}(h,h')=n(h)\sqrt{1+h'^2},
+    \mathcal{L}(h,h')=n(h)\sqrt{1+h'^2}.
 \end{equation}
-contains no explicit dependence on $x$. Because of this translational
-symmetry, the Beltrami identity gives
+It contains no explicit dependence on $x$. The associated horizontal
+translational symmetry therefore supplies a first integral: the Beltrami
+identity reduces the Euler--Lagrange equation to
 \begin{equation}
     \mathcal{L}
     -h'\frac{\partial\mathcal{L}}{\partial h'}
@@ -53,8 +54,8 @@ symmetry, the Beltrami identity gives
     =a,
     \label{eq:first-integral}
 \end{equation}
-where $a$ is constant along a ray. If $\theta$ is the angle between the ray
-and the horizontal, then $\cos\theta=1/\sqrt{1+h'^2}$ and
+where $a$ is constant along a ray. Introducing the angle $\theta$ between
+ray and horizontal, so that $\cos\theta=1/\sqrt{1+h'^2}$,
 Eq.~\eqref{eq:first-integral} becomes
 \begin{equation}
     n(h)\cos\theta=a.
@@ -62,14 +63,14 @@ Eq.~\eqref{eq:first-integral} becomes
 This is the continuous form of Snell's law appropriate to a horizontally
 stratified medium \cite{schroeder2000astronomical,nener2003analytical}.
 
-Solving Eq.~\eqref{eq:first-integral} for the ray slope yields
+Rearranging Eq.~\eqref{eq:first-integral} gives the ray slope in the form
 \begin{equation}
     h'^2
     =
     \frac{n^2(h)}{a^2}-1.
     \label{eq:ray-slope}
 \end{equation}
-On any monotonic branch of a ray,
+On any monotonic branch, inverting this relation gives
 \begin{equation}
     \left|\frac{dx}{dh}\right|
     =
@@ -95,8 +96,7 @@ traverses. Hence the upward-bending profiles considered here satisfy
 $n(h)\geq n_0$ near the boundary.
 
 Define $d(h)$ as the maximum horizontal distance from a boundary tangency
-point to an endpoint at height $h$. Substituting
-Eq.~\eqref{eq:grazing-constant} into
+point to an endpoint at height $h$. Using Eq.~\eqref{eq:grazing-constant} in
 Eq.~\eqref{eq:horizontal-increment-general} gives
 \begin{equation}
     d(h)
