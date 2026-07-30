@@ -1,2 +1,2 @@
 # inverse-geometrical-optics
-Mathematical reconstruction of refractive-index profiles reproducing globe-like horizon occlusion.
+This repository investigates inverse problems in geometrical optics, with the horizon occlusion problem serving as the first case study.
