@@ -1,0 +1,104 @@
+% Figure 1: grazing-ray geometry.
+% This file is included from sections/mathematical_model.tex.
+\begin{tikzpicture}[
+    font=\small,
+    ray/.style={draw=black, line width=0.95pt, -{Stealth[length=2.0mm,width=1.3mm]}},
+    boundary/.style={draw=black, line width=1.25pt},
+    construction/.style={draw=black!55, densely dashed, line width=0.45pt},
+    dimension/.style={{Stealth[length=1.8mm,width=1.2mm]}-{Stealth[length=1.8mm,width=1.2mm]}, draw=black!75, line width=0.5pt},
+    tangent/.style={draw=black!65, line width=0.55pt},
+    point/.style={circle, fill=black, inner sep=1.45pt},
+    paneltitle/.style={font=\small},
+    label/.style={font=\small}
+]
+
+% Common dimensions in drawing units.
+\def\panelW{6.0}
+\def\baseY{0}
+\def\obsX{0.75}
+\def\grazeX{5.05}
+\def\obsH{2.15}
+
+% --------------------------------------------------------------------------
+% (a) Single-point horizon distance
+% --------------------------------------------------------------------------
+\begin{scope}[xshift=0cm]
+  \node[paneltitle, anchor=west] at (0.0,3.05) {(a) Single-point horizon distance};
+
+  % Opaque boundary.
+  \draw[boundary] (0,\baseY) -- (\panelW,\baseY);
+  \node[anchor=west] at (0.02,-0.36) {$h=0$};
+
+  % Exact exponential-model grazing branch, normalized and rescaled.
+  % Parameter u runs from 0 at G to a positive value at O, with
+  % h/R = -ln(cos u).  The affine scaling only sets the panel proportions.
+  \draw[ray, samples=90, smooth, variable=\u, domain=0:1.08]
+    plot ({\grazeX-(\grazeX-\obsX)*(\u/1.08)},
+          {2.15*(-ln(cos(\u r)))/(-ln(cos(1.08 r))) });
+
+  \coordinate (Oa) at (\obsX,\obsH);
+  \coordinate (Ga) at (\grazeX,0);
+  \node[point] at (Oa) {};
+  \node[point] at (Ga) {};
+  \node[anchor=south east] at ($(Oa)+(-0.05,0.08)$) {$O$};
+  \node[anchor=north] at ($(Ga)+(0,-0.10)$) {$G$};
+
+  % Height and horizontal-distance constructions.
+  \draw[construction] (Oa) -- (\obsX,0);
+  \draw[dimension] (\obsX-0.22,0.02) -- node[left] {$h$} (\obsX-0.22,\obsH-0.02);
+  \draw[dimension] (\obsX,-0.63) -- node[fill=white,inner sep=1.2pt] {$d(h)$} (\grazeX,-0.63);
+
+  % Tangent at grazing point.
+  \draw[tangent] ($(Ga)+(-0.38,0.10)$) -- ($(Ga)+(0.38,0.10)$);
+  \node[anchor=south] at (3.20,1.10) {grazing ray};
+\end{scope}
+
+% --------------------------------------------------------------------------
+% (b) Maximum mutual-visibility distance
+% --------------------------------------------------------------------------
+\begin{scope}[xshift=7.15cm]
+  \node[paneltitle, anchor=west] at (0.0,3.05) {(b) Maximum mutual-visibility distance};
+
+  \def\leftX{0.75}
+  \def\gX{3.20}
+  \def\rightX{5.45}
+  \def\leftH{2.12}
+  \def\rightH{1.58}
+
+  \draw[boundary] (0,0) -- (\panelW,0);
+  \node[anchor=west] at (0.02,-0.36) {$h=0$};
+
+  % Left exact grazing branch.
+  \draw[ray, samples=75, smooth, variable=\u, domain=0:1.08]
+    plot ({\gX-(\gX-\leftX)*(\u/1.08)},
+          {\leftH*(-ln(cos(\u r)))/(-ln(cos(1.08 r))) });
+  % Right reciprocal branch; arrow points toward the target.
+  \draw[ray, samples=75, smooth, variable=\u, domain=0:0.96]
+    plot ({\gX+(\rightX-\gX)*(\u/0.96)},
+          {\rightH*(-ln(cos(\u r)))/(-ln(cos(0.96 r))) });
+
+  \coordinate (Ob) at (\leftX,\leftH);
+  \coordinate (Gb) at (\gX,0);
+  \coordinate (Tb) at (\rightX,\rightH);
+  \node[point] at (Ob) {};
+  \node[point] at (Gb) {};
+  \node[point] at (Tb) {};
+  \node[anchor=south east] at ($(Ob)+(-0.04,0.08)$) {$O$};
+  \node[anchor=north] at ($(Gb)+(0,-0.10)$) {$G$};
+  \node[anchor=south west] at ($(Tb)+(0.06,0.06)$) {$T$};
+
+  \draw[construction] (Ob) -- (\leftX,0);
+  \draw[construction] (Tb) -- (\rightX,0);
+  \draw[dimension] (\leftX-0.22,0.02) -- node[left] {$h_{\mathrm{o}}$} (\leftX-0.22,\leftH-0.02);
+  \draw[dimension] (\rightX+0.22,0.02) -- node[right] {$h_{\mathrm{t}}$} (\rightX+0.22,\rightH-0.02);
+
+  \draw[tangent] ($(Gb)+(-0.38,0.10)$) -- ($(Gb)+(0.38,0.10)$);
+  \node[anchor=south] at (3.18,1.10) {grazing ray};
+
+  \draw[dimension] (\leftX,-0.60) -- node[fill=white,inner sep=1.0pt] {$d(h_{\mathrm{o}})$} (\gX,-0.60);
+  \draw[dimension] (\gX,-0.60) -- node[fill=white,inner sep=1.0pt] {$d(h_{\mathrm{t}})$} (\rightX,-0.60);
+  \draw[dimension] (\leftX,-1.02) -- node[fill=white,inner sep=1.0pt]
+      {$L_{\max}=d(h_{\mathrm{o}})+d(h_{\mathrm{t}})$} (\rightX,-1.02);
+\end{scope}
+
+\end{tikzpicture}
