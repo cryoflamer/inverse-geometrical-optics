@@ -1,2 +1,166 @@
-\section{Exact Solution}
-TODO.
+\section{Exact Exponential Solution}
+\label{sec:exact-solution}
+
+The paraxial construction identifies the exponential profile
+\begin{equation}
+    n(h)=n_0 e^{\kappa h}
+    \label{eq:exact-exponential-profile}
+\end{equation}
+as the natural candidate for reproducing spherical horizon behaviour above a
+flat boundary.  Because the stratified problem possesses the first integral
+introduced in Sec.~\ref{sec:model}, this profile can also be
+solved without the small-slope approximation.
+
+\subsection{Exact ray trajectory}
+
+For a ray whose minimum height is $h_m$, the slope vanishes at
+$x=x_m$.  Evaluating the first integral there gives
+\begin{equation}
+    a=n(h_m)=n_0 e^{\kappa h_m}.
+\end{equation}
+Substitution into the exact slope equation yields
+\begin{equation}
+    \left(\frac{dh}{dx}\right)^2
+    =
+    \frac{n^2(h)}{n^2(h_m)}-1
+    =
+    e^{2\kappa(h-h_m)}-1.
+    \label{eq:exact-exponential-slope}
+\end{equation}
+On either branch of the ray,
+\begin{equation}
+    \left|x-x_m\right|
+    =
+    \int_{h_m}^{h}
+    \frac{d\eta}
+    {\sqrt{e^{2\kappa(\eta-h_m)}-1}}.
+\end{equation}
+The integral is elementary and gives
+\begin{equation}
+    \left|x-x_m\right|
+    =
+    \frac{1}{\kappa}
+    \arccos\!\left[e^{-\kappa(h-h_m)}\right].
+    \label{eq:exact-horizontal-distance}
+\end{equation}
+Inverting Eq.~\eqref{eq:exact-horizontal-distance} produces the exact ray
+family
+\begin{equation}
+    h(x)
+    =
+    h_m
+    -
+    \frac{1}{\kappa}
+    \ln\!\left[
+        \cos\!\bigl(\kappa(x-x_m)\bigr)
+    \right],
+    \label{eq:exact-exponential-ray}
+\end{equation}
+valid on the interval
+\begin{equation}
+    \left|\kappa(x-x_m)\right|<\frac{\pi}{2}.
+\end{equation}
+Near the minimum, expansion of the logarithm gives
+\begin{equation}
+    h(x)
+    =
+    h_m
+    +
+    \frac{\kappa}{2}(x-x_m)^2
+    +
+    \frac{\kappa^3}{12}(x-x_m)^4
+    +
+    O\!\left(\kappa^5(x-x_m)^6\right),
+    \label{eq:exact-ray-local-expansion}
+\end{equation}
+so the parabolic result of the previous section is recovered at leading
+order.  The exact curvature is not constant away from the minimum.  Indeed,
+Eq.~\eqref{eq:exact-exponential-ray} implies
+\begin{equation}
+    h''
+    =
+    \kappa\sec^2\!\bigl(\kappa(x-x_m)\bigr)
+    =
+    \kappa\left(1+h'^2\right),
+    \label{eq:exact-ray-curvature-equation}
+\end{equation}
+which reduces to $h''\simeq\kappa$ only in the paraxial regime.
+
+\subsection{Exact grazing distance}
+
+A limiting ray that just touches the opaque boundary has
+\begin{equation}
+    h_m=0.
+\end{equation}
+The horizontal distance from the tangency point to an endpoint at height $h$
+is therefore
+\begin{equation}
+    d_{\mathrm{e}}(h)
+    =
+    \frac{1}{\kappa}
+    \arccos\!\left(e^{-\kappa h}\right).
+    \label{eq:exact-exponential-horizon-distance}
+\end{equation}
+For observer and target heights $h_{\mathrm{o}}$ and $h_{\mathrm{t}}$, the
+exact limiting separation is
+\begin{equation}
+    L_{\max}^{(\mathrm{e})}
+    =
+    \frac{1}{\kappa}
+    \left[
+        \arccos\!\left(e^{-\kappa h_{\mathrm{o}}}\right)
+        +
+        \arccos\!\left(e^{-\kappa h_{\mathrm{t}}}\right)
+    \right].
+    \label{eq:exact-exponential-maximum-separation}
+\end{equation}
+With $\kappa=1/R$, this becomes
+\begin{equation}
+    L_{\max}^{(\mathrm{e})}
+    =
+    R
+    \left[
+        \arccos\!\left(e^{-h_{\mathrm{o}}/R}\right)
+        +
+        \arccos\!\left(e^{-h_{\mathrm{t}}/R}\right)
+    \right].
+    \label{eq:exact-earth-scale-separation}
+\end{equation}
+Thus the exponential profile produces genuine geometric occlusion above a
+flat surface: beyond the limiting separation, every connecting ray intersects
+the boundary, whereas raising either endpoint restores a non-intersecting
+ray.
+
+\subsection{Paraxial limit}
+
+For $z=\kappa h\ll 1$,
+\begin{equation}
+    \arccos\!\left(e^{-z}\right)
+    =
+    \sqrt{2z}
+    \left(
+        1
+        -\frac{z}{6}
+        +\frac{z^2}{120}
+        +O(z^3)
+    \right).
+    \label{eq:arccos-exponential-expansion}
+\end{equation}
+Consequently,
+\begin{equation}
+    d_{\mathrm{e}}(h)
+    =
+    \sqrt{\frac{2h}{\kappa}}
+    \left(
+        1
+        -\frac{\kappa h}{6}
+        +\frac{(\kappa h)^2}{120}
+        +O\!\left((\kappa h)^3\right)
+    \right).
+    \label{eq:exact-distance-expansion}
+\end{equation}
+The first term is exactly the paraxial distance
+Eq.~\eqref{eq:paraxial-horizon-distance}.  The higher-order terms quantify
+where the exponential refractive construction departs from a constant-
+curvature approximation.  The next section compares this exact optical law
+with the corresponding horizon law on a spherical surface.
