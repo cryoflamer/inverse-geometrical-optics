@@ -3,7 +3,7 @@
 
 \subsection{Geometry and assumptions}
 
-Consider a two-dimensional vertical section of an otherwise horizontally
+Consider a two-dimensional vertical section through a horizontally
 homogeneous medium.  Let $x$ denote horizontal distance and let $h\geq 0$
 denote height above an opaque planar boundary located at $h=0$.  The
 refractive index is assumed to be isotropic and vertically stratified,
@@ -15,13 +15,13 @@ with
 \begin{equation}
     n_0\equiv n(0).
 \end{equation}
-Because the medium is invariant under horizontal translations, every ray may
-be studied in a single vertical plane.  A ray is represented by a curve
+Horizontal translational symmetry allows each ray to be analysed in a single
+vertical plane.  A ray is represented by a curve
 $h=h(x)$ wherever it is single-valued in $x$.
 
 The boundary at $h=0$ is taken to be perfectly opaque.  A source and an
-observer are therefore mutually visible only if at least one geometrical-optics
-ray connecting them remains in the open half-space $h>0$, except possibly at a
+observer are mutually visible only if at least one geometrical-optics ray
+connecting them remains in the open half-space $h>0$, except possibly at a
 single tangency point in the limiting case.
 
 \subsection{Fermat principle and the first integral}
@@ -35,7 +35,7 @@ The optical path length of a ray between two fixed endpoints is
     \int n(h)\sqrt{1+h'^2}\,dx,
     \label{eq:fermat-functional}
 \end{equation}
-where $h'=dh/dx$.  Rays are stationary curves of
+where $h'=dh/dx$.  Geometrical-optics rays are stationary curves of
 Eq.~\eqref{eq:fermat-functional}.  The corresponding Lagrangian,
 \begin{equation}
     \mathcal{L}(h,h')=n(h)\sqrt{1+h'^2},
@@ -72,20 +72,21 @@ On any monotonic branch of a ray,
     \frac{a}{\sqrt{n^2(h)-a^2}}.
     \label{eq:horizontal-increment-general}
 \end{equation}
-These relations will be used below both for direct ray construction and for
-reconstructing a refractive-index profile from a prescribed visibility law.
+These relations support both the direct construction of ray trajectories and
+the inverse reconstruction of a refractive-index profile from a prescribed
+visibility law.
 
 \subsection{Grazing rays and horizon distance}
 
-For fixed endpoint heights, the limiting visible ray is the ray that just
-grazes the opaque boundary.  At its point of contact with $h=0$ the ray is
+For fixed endpoint heights, the limiting visible ray just grazes the opaque
+boundary.  At its point of contact with $h=0$ the ray is
 horizontal, so that $h'=0$.  Equation~\eqref{eq:first-integral} then fixes its
 constant to
 \begin{equation}
     a=n_0.
     \label{eq:grazing-constant}
 \end{equation}
-A smooth grazing ray of this type requires $n(h)\geq n_0$ over the heights it
+Such a smooth grazing ray requires $n(h)\geq n_0$ throughout the heights it
 traverses.  In particular, the profiles relevant to downward-bending rays
 above the boundary increase with height near $h=0$.
 
@@ -115,8 +116,10 @@ maximum horizontal separation is
     d(h_{\mathrm{o}})+d(h_{\mathrm{t}}).
     \label{eq:maximum-separation-general}
 \end{equation}
-For separations below this value an unobstructed ray exists; at equality the
-ray grazes the boundary; above it every connecting ray intersects the opaque
-surface.  Equation~\eqref{eq:horizon-distance-general} therefore provides the
+For separations below this value, an unobstructed ray exists.  At equality,
+the limiting ray grazes the boundary; above it, every connecting ray
+intersects
+the opaque surface.  Equation~\eqref{eq:horizon-distance-general} therefore
+provides the
 basic link between a stratified refractive-index profile and the resulting
 horizon-occlusion law.
