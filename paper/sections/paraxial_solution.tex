@@ -1,6 +1,9 @@
 \section{Paraxial Refractive Solution}
 \label{sec:paraxial}
 
+We now seek the refractive-index profile that reproduces the leading-order
+horizon geometry within the paraxial approximation.
+
 \subsection{Small-angle ray equation}
 
 We first restrict attention to rays with small slope relative to the
@@ -33,8 +36,8 @@ or, equivalently,
     h''\simeq \frac{d\ln n}{dh}.
     \label{eq:paraxial-ray-equation}
 \end{equation}
-Thus, in the paraxial regime, the logarithmic vertical gradient of the
-refractive index determines the local ray curvature.
+Thus, within the paraxial approximation, the logarithmic vertical gradient
+of the refractive index determines the local ray curvature.
 
 \subsection{Profile producing constant ray curvature}
 
@@ -48,14 +51,12 @@ boundary, we therefore impose
     \kappa>0,
     \label{eq:constant-curvature-condition}
 \end{equation}
-with $\kappa=1/R$ for the spherical comparison. Combining
-Eqs.~\eqref{eq:paraxial-ray-equation} and
-\eqref{eq:constant-curvature-condition} gives
+with $\kappa=1/R$ for the spherical comparison. Substituting Eq.~\eqref{eq:constant-curvature-condition} into
+Eq.~\eqref{eq:paraxial-ray-equation} gives
 \begin{equation}
     \frac{d\ln n}{dh}=\kappa.
 \end{equation}
-Integration with the boundary condition $n(0)=n_0$ produces the exponential
-profile
+Integrating with the boundary condition $n(0)=n_0$ yields
 \begin{equation}
     n(h)=n_0 e^{\kappa h}.
     \label{eq:paraxial-exponential-profile}
@@ -69,13 +70,15 @@ so that
     n(h)=n_0 e^{h/R}.
     \label{eq:earth-scale-exponential-profile}
 \end{equation}
-The required refractive index therefore increases with height. This sign will
-be central to the later comparison with an ordinary atmosphere.
+The exponential form is therefore derived from the constant-curvature
+requirement rather than assumed. The required refractive index increases with
+height, a sign that will be central to the later comparison with an ordinary
+atmosphere.
 
 \subsection{Parabolic rays and the visibility law}
 
-With constant curvature, Eq.~\eqref{eq:constant-curvature-condition}
-integrates to
+The corresponding ray family follows by integrating
+Eq.~\eqref{eq:constant-curvature-condition}:
 \begin{equation}
     h(x)=h_m+\frac{\kappa}{2}(x-x_m)^2,
     \label{eq:paraxial-ray-family}
