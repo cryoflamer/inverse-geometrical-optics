@@ -1,0 +1,135 @@
+\section{General Inverse Reconstruction}
+\label{sec:inverse-reconstruction}
+
+The preceding sections began with a refractive-index profile and derived the
+resulting horizon law.  The same relation can be read in the opposite
+direction.  Given a desired one-sided visibility distance as a function of
+endpoint height, the corresponding stratified refractive-index profile can be
+reconstructed directly.  This inverse formulation separates the mathematical
+question of existence from the physical question of whether the reconstructed
+profile can occur in an atmosphere.
+
+\subsection{Reconstruction from a prescribed horizon law}
+
+For a monotonic profile with $n(0)=n_0$ and $n(h)>n_0$ for $h>0$, the grazing
+ray derived in Sec.~\ref{sec:model} gives the one-sided horizon distance
+\begin{equation}
+    d(h)
+    =
+    \int_0^h
+    \frac{n_0\,d\eta}
+    {\sqrt{n^2(\eta)-n_0^2}}.
+    \label{eq:inverse-forward-relation}
+\end{equation}
+The integrand depends only on the local value of the refractive index.
+Differentiating Eq.~\eqref{eq:inverse-forward-relation} with respect to its
+upper limit yields
+\begin{equation}
+    d'(h)
+    =
+    \frac{n_0}
+    {\sqrt{n^2(h)-n_0^2}}.
+    \label{eq:horizon-law-derivative}
+\end{equation}
+Solving algebraically for $n(h)$ gives the inverse reconstruction formula
+\begin{equation}
+    n(h)
+    =
+    n_0
+    \sqrt{
+        1+\frac{1}{[d'(h)]^2}
+    }.
+    \label{eq:general-inverse-reconstruction}
+\end{equation}
+Thus any differentiable, strictly increasing horizon law with $d'(h)>0$
+defines a refractive-index profile within the assumptions of the model.  The
+overall multiplicative scale $n_0$ does not affect ray trajectories; it fixes
+only the absolute optical path length.  Once $n_0$ is chosen, the profile is
+unique wherever $d'(h)$ is finite and nonzero.
+
+Equation~\eqref{eq:general-inverse-reconstruction} also makes the near-boundary
+behaviour transparent.  A square-root horizon law,
+$d(h)\sim C\sqrt{h}$, has $d'(h)\sim C/(2\sqrt{h})$ and therefore
+$n(h)\to n_0$ continuously as $h\to0^+$.  Expanding the square root gives
+\begin{equation}
+    n(h)
+    =
+    n_0
+    \left[
+        1+\frac{1}{2[d'(h)]^2}
+        +O\!\left(\frac{1}{[d'(h)]^4}\right)
+    \right].
+    \label{eq:inverse-near-boundary-expansion}
+\end{equation}
+For $d(h)\simeq\sqrt{2Rh}$, this immediately reproduces
+$n(h)\simeq n_0(1+h/R)$ and hence the leading-order exponential profile found
+in Sec.~\ref{sec:paraxial}.
+
+\subsection{Exact reconstruction of the spherical horizon law}
+
+We now prescribe the exact spherical arc-distance law from
+Eq.~\eqref{eq:exact-spherical-horizon-distance},
+\begin{equation}
+    d_{\mathrm{s}}(h)
+    =
+    R\arccos\!\left(\frac{R}{R+h}\right).
+\end{equation}
+Its derivative is
+\begin{equation}
+    d_{\mathrm{s}}'(h)
+    =
+    \frac{R^2}
+    {(R+h)\sqrt{h(2R+h)}}.
+    \label{eq:spherical-horizon-derivative}
+\end{equation}
+Substitution into Eq.~\eqref{eq:general-inverse-reconstruction} gives
+\begin{equation}
+    n_{\mathrm{s}}(h)
+    =
+    n_0
+    \sqrt{
+        1+
+        \frac{(R+h)^2h(2R+h)}{R^4}
+    }.
+    \label{eq:exact-spherical-reconstruction-profile}
+\end{equation}
+By construction, a grazing ray in this stratified medium above a flat opaque
+boundary has exactly the same one-sided distance--height relation as a tangent
+line of sight above a sphere of radius $R$, when both models use the same
+numerical height $h$.  Therefore
+\begin{equation}
+    L_{\max}
+    =
+    d_{\mathrm{s}}(h_{\mathrm{o}})
+    +
+    d_{\mathrm{s}}(h_{\mathrm{t}})
+\end{equation}
+is reproduced exactly for arbitrary observer and target heights within the
+idealised model.
+
+For $h/R\ll1$, Eq.~\eqref{eq:exact-spherical-reconstruction-profile} expands as
+\begin{equation}
+    \frac{n_{\mathrm{s}}(h)}{n_0}
+    =
+    1
+    +\frac{h}{R}
+    +2\left(\frac{h}{R}\right)^2
+    +O\!\left(\frac{h^3}{R^3}\right).
+    \label{eq:spherical-profile-small-height}
+\end{equation}
+The linear term agrees with
+$e^{h/R}=1+h/R+\tfrac12(h/R)^2+\cdots$, explaining why the exponential
+profile reproduces the spherical law at leading order.  The different
+quadratic terms encode the small but finite discrepancy quantified in
+Sec.~\ref{sec:spherical-comparison}.
+
+\subsection{Scope of the inverse result}
+
+The reconstruction concerns the limiting grazing distance and therefore the
+associated boundary-occlusion criterion.  It does not by itself establish
+that every aspect of image formation, intensity, dispersion, turbulence, or
+multi-path propagation is identical to that of a spherical surface.  Nor does
+mathematical reconstructibility imply physical plausibility.  In particular,
+Eq.~\eqref{eq:exact-spherical-reconstruction-profile} increases with height,
+just as the exponential profile does.  The next section compares this required
+sign and scale with those of a physical atmosphere.
