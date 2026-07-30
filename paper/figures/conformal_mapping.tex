@@ -4,100 +4,91 @@
     x=1cm,y=1cm,
     line cap=round,
     line join=round,
-    ray/.style={line width=0.9pt},
-    boundary/.style={line width=1.25pt},
+    ray/.style={line width=0.95pt},
+    boundary/.style={line width=1.35pt},
     construction/.style={line width=0.45pt,dashed},
-    dimension/.style={line width=0.45pt,{Latex[length=2.2mm]}-{Latex[length=2.2mm]}},
-    maparrow/.style={line width=0.8pt,-{Latex[length=3mm]}},
-    point/.style={circle,fill=black,inner sep=1.6pt},
+    maparrow/.style={line width=0.9pt,-{Latex[length=3mm]}},
+    point/.style={circle,fill=black,inner sep=1.7pt},
     every node/.style={font=\small}
 ]
 % --------------------------------------------------------------------------
-% (a) Physical coordinates
+% (a) Physical plane
 % --------------------------------------------------------------------------
 \begin{scope}[shift={(0,0)}]
-  \node[font=\normalsize] at (2.75,3.95) {(a) Physical coordinates $(x,h)$};
+  \node[font=\normalsize] at (2.45,3.85) {(a) Physical plane};
 
-  % Opaque planar boundary
-  \draw[boundary] (0.15,0) -- (5.35,0);
-  \node[anchor=north west] at (0.22,-0.12) {opaque boundary $h=0$};
+  \draw[boundary] (0.10,0) -- (4.80,0);
+  \node[anchor=north west] at (0.18,-0.12) {$h=0$};
 
-  % Exact exponential grazing branch, normalized with R=1.
-  \draw[ray,domain=-1.02:0,samples=100,smooth,variable=\u]
-    plot ({4.55+3.65*\u},{-2.35*ln(cos(57.2958*\u))});
+  % Exact grazing branch, shown in normalized form and affinely scaled.
+  \draw[ray,domain=-1.02:0,samples=120,smooth,variable=\u]
+    plot ({4.12+3.35*\u},{-2.18*ln(cos(57.2958*\u))});
 
-  % Tangency and endpoint
-  \coordinate (G) at (4.55,0);
-  \coordinate (O) at ({4.55-3.65*1.02},{-2.35*ln(cos(57.2958*1.02))});
+  \coordinate (G) at (4.12,0);
+  \coordinate (O) at ({4.12-3.35*1.02},{-2.18*ln(cos(57.2958*1.02))});
+
   \node[point] at (G) {};
   \node[point] at (O) {};
   \node[below=2pt] at (G) {$G$};
   \node[above left=1pt] at (O) {$O$};
 
-  % Coordinate guides
   \draw[construction] (O) -- ($(O |- G)$);
-  \draw[dimension] ($(O |- G)+(-0.22,0)$) -- node[left] {$h$} ($(O)+(-0.22,0)$);
-  \draw[->,line width=0.45pt] (0.28,0.36) -- (1.08,0.36) node[right] {$x$};
-  \draw[->,line width=0.45pt] (0.28,0.36) -- (0.28,1.16) node[above] {$h$};
 
-  % Tangent marker and ray label
-  \draw[line width=0.45pt] ($(G)+(-0.42,0.12)$) -- ($(G)+(0.42,0.12)$);
-  \node at (3.05,2.55) {curved grazing ray};
-  \draw[-{Latex[length=2.3mm]},line width=0.55pt]
-    (2.80,2.35) -- (2.47,1.92);
+  % Compact coordinate axes.
+  \coordinate (A) at (0.42,0.38);
+  \draw[->,line width=0.45pt] (A) -- ++(0.72,0) node[right] {$x$};
+  \draw[->,line width=0.45pt] (A) -- ++(0,0.72) node[above] {$h$};
+
+  % Tangent marker.
+  \draw[line width=0.45pt] ($(G)+(-0.34,0.10)$) -- ($(G)+(0.34,0.10)$);
 \end{scope}
 
 % --------------------------------------------------------------------------
-% Mapping arrow
+% Conformal map
 % --------------------------------------------------------------------------
-\draw[maparrow] (5.75,1.95) -- (7.05,1.95);
-\node[align=center] at (6.40,2.72)
-  {$r=R e^{h/R}$\\[-1pt]$\phi=x/R$};
+\begin{scope}[shift={(5.05,0)}]
+  \node[align=center] at (0.95,2.75)
+    {$r=R e^{h/R}$\\[-1pt]$\phi=x/R$};
+  \draw[maparrow] (0.20,1.75) -- (1.70,1.75);
+\end{scope}
 
 % --------------------------------------------------------------------------
-% (b) Conformal coordinates
+% (b) Conformal image
 % --------------------------------------------------------------------------
-\begin{scope}[shift={(7.25,0)}]
-  \node[font=\normalsize] at (2.65,3.95) {(b) Conformal coordinates $(r,\phi)$};
+\begin{scope}[shift={(7.05,0)}]
+  \node[font=\normalsize] at (2.35,3.85) {(b) Conformal image};
 
-  \coordinate (C) at (2.55,1.62);
-  \def\R{1.35}
-  \coordinate (Gt) at ($(C)+(0,\R)$);
-  \coordinate (Ot) at ($(Gt)+(-2.15,0)$);
+  \coordinate (C) at (2.25,1.46);
+  \def\R{1.18}
+  \coordinate (Gp) at ($(C)+(0,\R)$);
+  \coordinate (Op) at ($(Gp)+(-1.92,0)$);
 
-  % Circular boundary and transformed ray
   \draw[boundary] (C) circle[radius=\R];
-  \draw[ray] ($(Ot)+(-0.18,0)$) -- ($(Gt)+(1.15,0)$);
-  \node[point] at (Gt) {};
-  \node[point] at (Ot) {};
-  \node[above right=1pt] at (Gt) {$G'$};
-  \node[above left=1pt] at (Ot) {$O'$};
-  \node[below=3pt] at ($(C)+(0,-\R)$) {circular boundary $r=R$};
-  \node[above] at ($(Gt)+(-0.82,0.10)$) {straight ray};
+  \draw[ray] ($(Op)+(-0.12,0)$) -- ($(Gp)+(0.98,0)$);
 
-  % Radius to tangency point and to endpoint
-  \draw[line width=0.55pt] (C) -- (Gt) node[midway,right] {$R$};
-  \draw[line width=0.55pt] (C) -- (Ot) node[pos=0.57,below left] {$r$};
+  \node[point] at (Gp) {};
+  \node[point] at (Op) {};
   \node[point,inner sep=1.2pt] at (C) {};
+
+  \node[above right=1pt] at (Gp) {$G'$};
+  \node[above left=1pt] at (Op) {$O'$};
   \node[below right=1pt] at (C) {$C$};
 
-  % Right-angle marker at tangency
+  \draw[line width=0.55pt] (C) -- (Gp) node[midway,right] {$R$};
+  \draw[line width=0.55pt] (C) -- (Op) node[pos=0.55,below left] {$r$};
+
+  % Right-angle marker at tangency.
   \draw[line width=0.45pt]
-    ($(Gt)+(-0.18,0)$) -- ($(Gt)+(-0.18,-0.18)$) -- ($(Gt)+(0,-0.18)$);
+    ($(Gp)+(-0.18,0)$) -- ($(Gp)+(-0.18,-0.18)$) -- ($(Gp)+(0,-0.18)$);
 
-  % Angular displacement arc
+  % Angular displacement.
   \draw[-{Latex[length=2mm]},line width=0.5pt]
-    ($(C)+(90:0.62)$) arc[start angle=90,end angle=132.5,radius=0.62];
-  \node at ($(C)+(111:0.92)$) {$\Delta\phi$};
+    ($(C)+(90:0.56)$) arc[start angle=90,end angle=132.5,radius=0.56];
+  \node at ($(C)+(111:0.84)$) {$\Delta\phi$};
 
-  % Coordinate orientation
-  \draw[->,line width=0.45pt] ($(C)+(2.05,-0.95)$) -- ++(0.72,0)
-    node[right] {$r$};
-  \draw[-{Latex[length=2mm]},line width=0.45pt]
-    ($(C)+(2.12,-0.38)$) arc[start angle=-35,end angle=35,radius=0.52];
-  \node at ($(C)+(2.83,-0.05)$) {$\phi$};
+  \node[below=5pt] at ($(C)+(0,-\R)$) {$r=R$};
 \end{scope}
 \end{tikzpicture}
-\caption{Conformal representation of the exponential refractive model. (a) In physical coordinates, a grazing ray curves above the opaque planar boundary and is tangent to it at $G$. (b) Under $r=R e^{h/R}$ and $\phi=x/R$, the boundary becomes the circle $r=R$, while the same ray becomes a straight tangent line at $G'$. Physical height maps nonlinearly to radius, and horizontal displacement maps to angle.}
+\caption{Conformal representation of the exponential refractive model. The transformation $r=R e^{h/R}$, $\phi=x/R$ maps the opaque planar boundary $h=0$ to the circle $r=R$ and the curved grazing ray to a straight tangent line.}
 \label{fig:conformal-mapping}
 \end{figure}
